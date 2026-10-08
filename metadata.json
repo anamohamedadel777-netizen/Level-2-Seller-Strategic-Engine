@@ -1,0 +1,6 @@
+{
+  "name": "Offer Architecture Lab | مختبر هندسة العرض",
+  "description": "نظام استراتيجي لتحليل وهندسة العروض التجارية قبل بناء الفانل وتكبير الإعلانات - Mohamed Adel",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
