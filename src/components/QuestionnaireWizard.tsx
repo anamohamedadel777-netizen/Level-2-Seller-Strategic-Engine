@@ -193,8 +193,11 @@ export const QuestionnaireWizard: React.FC<QuestionnaireWizardProps> = ({
                       key={vol}
                       type="button"
                       onClick={() => {
-                        updateField('salesVolumeRange', vol);
-                        updateField('hasPaidCustomers', vol === '0' ? 'NO' : 'YES');
+                        onChange({
+                          ...data,
+                          salesVolumeRange: vol,
+                          hasPaidCustomers: vol === '0' ? 'NO' : 'YES',
+                        });
                       }}
                       className={`py-2 text-xs font-semibold rounded border transition-colors ${
                         data.salesVolumeRange === vol
@@ -234,6 +237,19 @@ export const QuestionnaireWizard: React.FC<QuestionnaireWizardProps> = ({
               <p className="text-[11px] text-[#797979] mt-1">
                 تنبيه: التقييم لا يقاس بطول النص، بل بمدى خصوصية وتمييز مرحلة وسياق المشتري.
               </p>
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-[#C8C5BA] mb-1.5">
+                ما الوضع أو المعاناة اليومية التي يعيشها المشتري حاليًا؟
+              </label>
+              <textarea
+                rows={3}
+                value={data.buyerSituation}
+                onChange={e => updateField('buyerSituation', e.target.value)}
+                placeholder="صف المعاناة أو الواقع اليومي المُحبط: مثلاً يقضي 6 ساعات يومياً في محادثات فردية بدون إغلاق، أو يستنزف ميزانية الإعلانات دون تحويل حقيقي..."
+                className="w-full bg-[#040405] border border-[#4A2F15] rounded-md px-3.5 py-2.5 text-sm text-[#FCFCFA] placeholder-[#797979] focus:outline-none focus:border-[#F5BF1E]"
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

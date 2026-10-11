@@ -46,6 +46,13 @@ const DIFFERENTIATION_EVIDENCE_MAP: Record<string, string> = {
   REPEATABLE_COMMERCIAL_EVIDENCE: 'مدعوم بأدلة تجارية متكررة',
 };
 
+const OBJECTION_EVIDENCE_MAP: Record<string, string> = {
+  NO_BUYER_CONVERSATIONS: 'قبل إجراء محادثات مع مشترين',
+  ASSUMED_OBJECTIONS_ONLY: 'اعتراضات مفترضة بالحدس فقط',
+  SPORADIC_FEEDBACK: 'ملاحظات متفرقة من مشترين',
+  REPEATED_ACTUAL_OBJECTIONS: 'اعتراضات متكررة في محادثات حية',
+};
+
 export const PrintView: React.FC<PrintViewProps> = ({ blueprint, onClose }) => {
   const { deterministic, aiInterpretation, questionnaire, generatedAt } = blueprint;
 

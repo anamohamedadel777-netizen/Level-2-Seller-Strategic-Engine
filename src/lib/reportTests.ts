@@ -261,12 +261,9 @@ export function runTestY(): ReportTestResult {
 // ============================================================================
 export function runTestZ(): ReportTestResult {
   const input: QuestionnaireData = {
-    ...BASE_TEST_INPUT,
+    ...STRESS_TEST_CASES.find(c => c.id === 'TEST_L')!.input,
     offerStage: 'OFFER_STAGE_5_REPEATABLE_SALES',
     hasPaidCustomers: 'YES',
-    pricingEvidenceContext: 'REPEAT_PURCHASES',
-    hasAnyonePaidExactPrice: 'YES',
-    evidenceTiersPresent: ['TIER_1_DIRECT_COMMERCIAL', 'TIER_2_OUTCOME_PROOF'],
     isTrafficQualified: 'YES',
   };
 
